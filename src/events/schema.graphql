@@ -1,0 +1,33 @@
+type Event {
+    id: ID!
+    title: String!
+    content: String!
+    published: Boolean!
+    createdAt: String!
+    date: String!
+    authorId: Int!
+  }
+
+  input NewEvent {
+    title: String!
+    content: String!
+    date: String!
+  }
+
+  input UpdateEvent {
+    id:ID!
+    published: Boolean
+    title: String
+    content: String
+  }
+
+  type Query {
+    events: [Event!]!
+    event(id: ID!): Event
+  }
+
+  type Mutation {
+    createEvent(input: NewEvent): Event!
+    updateEvent(input: UpdateEvent): Event
+    deleteEvent(id: ID!): Event
+  }
