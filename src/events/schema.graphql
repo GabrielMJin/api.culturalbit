@@ -10,6 +10,7 @@ type Event {
 
   input NewEvent {
     title: String!
+    published: Boolean!
     content: String!
     date: String!
   }
